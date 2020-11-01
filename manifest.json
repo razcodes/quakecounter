@@ -1,0 +1,41 @@
+{
+    "manifest_version":1,
+    "type":"WebApp",
+    "meta":{
+        "name":"Quake Counter",
+        "version":"1.0.0",
+        "minimum-overwolf-version":"0.77.10",
+        "author":"Razor Ramon",
+        "icon":"IconMouseOver.png",
+        "icon_gray":"IconMouseOver.png",
+        "description":"Demo App"
+    },
+    "data": {
+        "start_window":"desktop",
+        "windows":{
+            "desktop":{
+                    "file":"dist/desktop/desktop.html",
+                    "transparent": false,
+                    "resizable": true,
+                    "use_os_windowing": true,
+                    "size": {
+                        "width":700,
+                        "height":400
+                        },
+                    "min_size": {
+                        "width":400,
+                        "height":400
+                    }
+                }
+        },
+      "background": {
+            "file": "dist/background/background.html",
+            "is_background_page": true,
+            "background_optimization": false,
+            "size": {
+                "width": 0,
+                "height": 0
+            }
+        }
+    }
+}
