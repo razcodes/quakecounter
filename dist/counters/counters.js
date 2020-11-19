@@ -10,18 +10,20 @@ const setSeconds = (instance, sec) => {
 } 
 
 let countInterval1 = () => {
+    setSeconds(1, 30);
     interval1 = setInterval(() => {
         seconds1--;
-        setSeconds(counterInstance, seconds1);
+        setSeconds(1, seconds1);
         if (seconds1 <= 0) {
             clearInterval(interval1);
         };
     }, 1000);
 }
 let countInterval2 = () => {
+    setSeconds(2, 30);
     interval2 = setInterval(() => {
         seconds2--;
-        setSeconds(counterInstance, seconds2);
+        setSeconds(2, seconds2);
         if (seconds2 <= 0) {
             clearInterval(interval2);
         };
