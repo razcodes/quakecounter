@@ -2,40 +2,67 @@
     "manifest_version":1,
     "type":"WebApp",
     "meta":{
-        "name":"Quake Counter",
+        "name":"Quake Champions Counter",
         "version":"1.0.0",
-        "minimum-overwolf-version":"0.77.10",
-        "author":"Razor Ramon",
+        "minimum-overwolf-version":"0.120.0",
+        "author":"Zappah",
         "icon":"IconMouseOver.png",
         "icon_gray":"IconMouseOver.png",
-        "description":"Demo App"
+        "description":"Quake Champions Powerup Counter"
     },
+    "permissions": [
+        "Hotkeys",
+        "Logging",
+        "Web",
+        "GameInfo"
+      ],
     "data": {
-        "start_window":"desktop",
+        "game_targeting": {
+            "type": "dedicated",
+            "game_ids": [21228, 7764]
+          },
+        "launch_events": [
+            {
+              "event": "GameLaunch",
+              "event_data": {
+                "game_ids": [21228, 7764]
+              },
+              "start_minimized": true
+            }
+        ],
+        "hotkeys": {
+            "toggle_counter": {
+              "title": "Show or Hide Counter",
+              "action-type": "toggle",
+              "default": "Ctrl+Shift+S"
+            },
+            "start_counter": {
+                "title": "Start Counter",
+                "action-type": "custom",
+                "default": "Alt+Q"
+            }
+        },
+        "game_events": [21228, 7764],
+        "start_window":"counters",
         "windows":{
-            "desktop":{
-                    "file":"dist/desktop/desktop.html",
-                    "transparent": false,
-                    "resizable": true,
+            "counters":{
+                    "file":"dist/counters/counters.html",
+                    "transparent": true,
+                    "resizable": false,
                     "use_os_windowing": true,
+                    "native_window": true,
+                    "restrict_to_game_bounds": true,
+                    "clickthrough": true,
+                    "in_game_only": true,
                     "size": {
-                        "width":700,
-                        "height":400
+                        "width":100,
+                        "height":100
                         },
                     "min_size": {
-                        "width":400,
-                        "height":400
+                        "width":100,
+                        "height":100
                     }
                 }
-        },
-      "background": {
-            "file": "dist/background/background.html",
-            "is_background_page": true,
-            "background_optimization": false,
-            "size": {
-                "width": 0,
-                "height": 0
-            }
         }
     }
 }
